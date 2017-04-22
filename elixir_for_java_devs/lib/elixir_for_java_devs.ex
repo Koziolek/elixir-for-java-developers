@@ -24,12 +24,7 @@ defmodule ElixirForJavaDevs do
   end
 
   def listen2 do
-    receive do
-        {:ok, "Hi"} -> IO.puts "HI!"
-        {:ok, "Hello"} -> IO.puts "Hello!"
-        _ -> exit(:kboom)
-    end
-    listen2()
+    receiv1
   end
 
   def run do
@@ -39,4 +34,10 @@ defmodule ElixirForJavaDevs do
       end
   end
 
+end
+
+defmodule SumModule do
+    def sum(list) when is_list(list), do: _sum(list, 0)
+    defp _sum([], acc), do: acc
+    defp _sum([head|tail], acc), do: _sum(tail, acc+head)
 end

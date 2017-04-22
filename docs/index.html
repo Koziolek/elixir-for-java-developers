@@ -14,6 +14,7 @@
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/custom.css">
 
     <!-- Printing and PDF exports -->
     <script>
@@ -278,10 +279,15 @@
         </section>
 
         <section>
-            <h3>Struktury, typy i rekordy</h3>
+            <h4>Struktury, typy i rekordy</h4>
             <p class="fragment">Struktury bazują na mapach</p>
             <p class="fragment">Typy zabezpieczają nasz kod</p>
             <p class="fragment">Rekordy to makra ułatwiające pracę</p>
+        </section>
+
+        <section>
+            <h4>Elixir jest dynamicznie i silnie typowany</h4>
+            <img class="fragment" alt="meow" src="images/meow.jpg">
         </section>
 
         <section data-markdown>
@@ -328,8 +334,8 @@
                 #### Rekordy
                 ```elixir
                 defmodule User do
-                require Record
-                Record.defrecord :user, [name: "Koziołek", age: 32]
+                    require Record
+                    Record.defrecord :user, [name: "Koziołek", age: 32]
                 end
                 ```
                 ```elixir
