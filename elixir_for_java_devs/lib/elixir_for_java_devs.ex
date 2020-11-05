@@ -17,27 +17,32 @@ defmodule ElixirForJavaDevs do
   end
 
   def listen do
-     receive do
-        {:ok, "hello"} -> IO.puts "World"
-      end
-      listen()
+    receive do
+      {:ok, "hello"} -> IO.puts "World"
+    end
+    listen()
   end
 
   def listen2 do
-    receiv1
+    receive do
+      {:ok, "Hi"} -> IO.puts "HI!"
+      {:ok, "Hello"} -> IO.puts "Hello!"
+      _ -> exit(:kboom)
+    end
+    listen2()
   end
 
   def run do
-      {pid, ref} = spawn_monitor(ElixirForJavaDevs, :listen2, [])
-      receive do
-        {:DOWN, ref, :process, from_pid, reason} -> IO.puts "Exit reason: #{reason}"
-      end
+    {pid, ref} = spawn_monitor(ElixirForJavaDevs, :listen2, [])
+    receive do
+      {:DOWN, ref, :process, from_pid, reason} -> IO.puts "Exit reason: #{reason}"
+    end
   end
 
 end
 
 defmodule SumModule do
-    def sum(list) when is_list(list), do: _sum(list, 0)
-    defp _sum([], acc), do: acc
-    defp _sum([head|tail], acc), do: _sum(tail, acc+head)
+  def sum(list) when is_list(list), do: _sum(list, 0)
+  defp _sum([], acc), do: acc
+  defp _sum([head | tail], acc), do: _sum(tail, acc + head)
 end

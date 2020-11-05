@@ -11,7 +11,7 @@ defmodule NumberMultiplier do
     Now we have module that is consumer and producer.
   """
   def init(state) do
-    {:producer_consumer, state, subscribe_to: [NumberProducer]}
+    {:producer_consumer, state, subscribe_to: [{NumberProducer, max_demand: 10}]}
   end
 
   @doc """
@@ -20,6 +20,10 @@ defmodule NumberMultiplier do
   def handle_events(events, _from, state) do
     numbers =
       events
+      |> Enum.map( fn n ->
+        IO.inspect({self(), n, state})
+        n
+      end)
       |> Enum.map( fn n -> n * n end)
 
     {:noreply, numbers, state}
