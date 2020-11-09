@@ -7,7 +7,7 @@ defmodule PhoenixForJavaDevsWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_phoenix_for_java_devs_key",
-    signing_salt: "AZbQfwBi"
+    signing_salt: "WL3kugT5"
   ]
 
   socket "/socket", PhoenixForJavaDevsWeb.UserSocket,

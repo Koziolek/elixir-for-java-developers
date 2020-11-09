@@ -17,6 +17,7 @@ defmodule NumberConsumer do
     for event <- events do
       IO.inspect {self(), event, state}
     end
+    IO.inspect("Going sleep!!!")
     Process.sleep(1000)
     # As a consumer we never emit events
     {:noreply, [], state}
