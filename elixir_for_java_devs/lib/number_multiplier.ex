@@ -22,9 +22,13 @@ defmodule NumberMultiplier do
       events
       |> Enum.map( fn n ->
         IO.inspect({self(), n, state})
+
+        Process.sleep(1500)
         n
       end)
-      |> Enum.map( fn n -> n * n end)
+      |> Enum.map( fn n ->
+        n * n
+      end)
 
     {:noreply, numbers, state}
   end

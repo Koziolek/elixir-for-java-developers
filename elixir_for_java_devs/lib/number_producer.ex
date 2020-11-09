@@ -20,6 +20,7 @@ defmodule NumberProducer do
     """
     def handle_demand(demand, state) do
         events = Enum.to_list(state..state + demand - 1)
+        IO.inspect(events)
         {:noreply, events, (state + demand)}
     end
 

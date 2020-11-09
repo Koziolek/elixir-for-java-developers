@@ -13,10 +13,10 @@ config :phoenix_for_java_devs,
 # Configures the endpoint
 config :phoenix_for_java_devs, PhoenixForJavaDevsWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "6Ex3tSYd8umZzMWspl8uZWv3AGsm7rrJsczYKURMvv44DYh9Ox+qfxNF9FvZ/6sY",
+  secret_key_base: "+VvVS51gmnGOl3ZSf8J10IwSA0TV5Mj8o0ooPKRbA6RYMN2txhBg/NYfDpCH7v2w",
   render_errors: [view: PhoenixForJavaDevsWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: PhoenixForJavaDevs.PubSub,
-  live_view: [signing_salt: "NxPUJwH0"]
+  live_view: [signing_salt: "wChTRIqv"]
 
 # Configures Elixir's Logger
 config :logger, :console,
